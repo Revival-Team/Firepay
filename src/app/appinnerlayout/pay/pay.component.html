@@ -1,0 +1,60 @@
+<!-- banner -->
+<div class="row my-5">
+    <div class="col-12 text-center">
+        <img src="assets/img/QRCode.png" alt="">
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 mb-3">
+        <h1 class="mb-3"><span class="text-secondary fw-light">Сканируйте QR-code</span><br />Мнгновенная оплата</h1>
+        <p class="text-secondary mb-3">Это легко и моментально. Есть более 1500 продавцов, принимающих оплату через FiMobile.
+          Сканирование. Разрешить доступ к камере.</p>
+        <p class="text-secondary">Теперь вы также можете совершать платежи за 100 других стандартных платежных сервисов.</p>
+    </div>
+    <div class="col-12 mb-4 text-center">
+        <button class="btn btn-default btn-lg mb-3 px-4 shadow-sm" data-bs-target="#cammodal"
+            data-bs-toggle="modal">
+            <i class="bi bi-camera mx-2"></i> Включить камеру
+        </button>
+    </div>
+</div>
+<!-- offers banner -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card theme-bg overflow-hidden">
+            <figure class="m-0 p-0 position-absolute top-0 start-0 w-100 h-100 coverimg right-center-img" style="background-image: url(assets/img/offerbg.png);">
+                <img src="assets/img/offerbg.png" alt="" style="display: none;">
+            </figure>
+            <div class="card-body py-4">
+                <div class="row">
+                    <div class="col-10 align-self-center">
+                        <h1 class="mb-3"><span class="fw-light">15% СКИДКА</span><br>Подарочная карта</h1>
+                        <p>Вы получили подарочную карту. Спасибо, что были с нами!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- camera modal-->
+<div class="modal fade" id="cammodal" tabindex="-1" aria-labelledby="cammodalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xsm modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title" id="cammodalLabel">Разрешение доступа</h6>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="avatar avatar-80 p-1 shadow-sm shadow-primary rounded-15 mb-4">
+                    <div class="icons bg-primary text-white rounded-12">
+                        <i class="bi bi-camera size-24"></i>
+                    </div>
+                </div>
+                <h3 class="text-color-theme mb-2">Доступ к камере</h3>
+                <p class="text-secondary">Чтобы сканировать QR-код, нам нужно получить доступ к камере, пожалуйста, разрешите приложению доступ к камере.
+                </p>
+            </div>
+            <button type="button" class="btn btn-lg btn-primary rounded-15" data-bs-dismiss="modal">Разрешить</button>
+        </div>
+    </div>
+</div>

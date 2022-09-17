@@ -1,0 +1,511 @@
+<!-- chart js areachart-->
+<div class="row mb-3">
+    <div class="col-12 overflow-hidden">
+        <!-- calendar -->
+        <div class="row">
+            <div class="col position-relative align-self-center">
+                <h6 class="mb-1">Статистика</h6>
+                <input type="text" placeholder="Select date range" readonly="readonly" id="daterange"
+                    class="calendar-daterange text-secondary small" daterangepicker [options]="options"
+                    (selected)="selectedDate($event, daterange)" />
+            </div>
+            <div class="col-auto align-self-center">
+                <button class="btn btn-light btn-44 daterange-btn"
+                    onclick="document.getElementById('daterange').click()">
+                    <i class="bi bi-calendar-range size-22"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- income expense -->
+<div class="row">
+    <div class="col-6 col-md-3">
+        <div class="card mb-4 overflow-hidden">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-auto">
+                        <div class="circle-small">
+                            <circle-progress class="d-block vm" [percent]="65" [radius]="19" [outerStrokeWidth]="4"
+                                [innerStrokeWidth]="4" [space]="-4" [outerStrokeColor]="'#00dfa3'"
+                                [innerStrokeColor]="'rgba(0, 223, 163, 0.2)'" [animation]="true"
+                                [animationDuration]="300" [showTitle]="false" [showSubtitle]="false"
+                                [titleFontSize]="'15'" [backgroundPadding]="0"></circle-progress>
+                            <div class="avatar avatar-30 bg-success text-white rounded-circle">
+                                <i class="bi bi-arrow-down-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto align-self-center ps-0">
+                        <p class="size-10 mb-1 text-secondary">Доход</p>
+                        <p>1542т.р.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="smallchart">
+                <app-smallchartone></app-smallchartone>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card mb-4 overflow-hidden">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-auto">
+                        <div class="circle-small">
+                            <circle-progress class="d-block vm" [percent]="83" [radius]="19" [outerStrokeWidth]="4"
+                                [innerStrokeWidth]="4" [space]="-4" [outerStrokeColor]="'#f73563'"
+                                [innerStrokeColor]="'rgba(247, 53, 99, 0.2)'" [animation]="true"
+                                [animationDuration]="300" [showTitle]="false" [showSubtitle]="false"
+                                [titleFontSize]="'15'" [backgroundPadding]="0"></circle-progress>
+                            <div class="avatar avatar-30 bg-danger text-white rounded-circle">
+                                <i class="bi bi-arrow-up-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto align-self-center ps-0">
+                        <p class="size-10 mb-1 text-secondary">Расход</p>
+                        <p>1212т.р.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="smallchart">
+                <app-smallcharthree></app-smallcharthree>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- cards expense data  -->
+<div class="row mb-2">
+    <div class="col">
+        <h6 class="title">Мои карты</h6>
+    </div>
+    <div class="col-auto align-self-center">
+        <a href="" class="small">Новая карта</a>
+    </div>
+</div>
+
+<!-- swiper credit cards -->
+<div class="row mb-3">
+    <div class="col-12 px-0">
+        <swiper class="cardswiper" [slidesPerView]="'auto'" [spaceBetween]="0" [pagination]="false">
+            <ng-template swiperSlide>
+                <div class="card theme-bg shadow-sm shadow-purple mb-3">
+                    <img src="assets/img/card-bg.png" alt="" class="cardimg" />
+                    <div class="card-body">
+                        <div class="row mb-4">
+                            <div class="col-auto align-self-center">
+                                <img src="assets/img/maestro.png" alt="">
+                            </div>
+                            <div class="col align-self-center text-end">
+                                <p class="small">
+                                    <span class="text-muted size-10">Банк Москвы</span><br>
+                                    <span class="">Кредитная карта</span>
+                                </p>
+                            </div>
+                        </div>
+                        <h6 class="fw-normal mb-3">
+                            0000 0000 0001 5465
+                        </h6>
+                        <div class="row">
+                            <div class="col-auto">
+                                <p class="mb-0 text-muted size-10">срок до</p>
+                                <p>09/23</p>
+                            </div>
+                            <div class="col text-end">
+                                <p class="mb-0 text-muted size-10">Card Holder</p>
+                                <p>Maxartkiller</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-auto">
+                        <p class="mb-0 text-secondary size-10">Расход</p>
+                        <p>1500.00
+                            <small class="text-success">18.2
+                                <i class="bi bi-arrow-up"></i>
+                            </small>
+                        </p>
+                    </div>
+                    <div class="col text-end">
+                        <p class="mb-0 text-secondary size-10">Доступный лимит</p>
+                        <p>13500.00</p>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template swiperSlide>
+                <div class="card bg-danger shadow-sm shadow-danger mb-3">
+                    <div class="card-body">
+                        <div class="row mb-4">
+                            <div class="col-auto align-self-center">
+                                <img src="assets/img/visa.png" alt="">
+                            </div>
+                            <div class="col align-self-center text-end">
+                                <p class="small">
+                                    <span class="text-muted size-10">ВТБ Банк</span><br>
+                                    <span class="">Кредитная карта</span>
+                                </p>
+                            </div>
+                        </div>
+                        <h6 class="fw-normal mb-3">
+                            2200 0000 0001 5465
+                        </h6>
+                        <div class="row">
+                            <div class="col-auto">
+                                <p class="mb-0 text-muted size-10">срок до</p>
+                                <p>09/23</p>
+                            </div>
+                            <div class="col text-end">
+                                <p class="mb-0 text-muted size-10">Card Holder</p>
+                                <p>Maxartkiller</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-auto">
+                        <p class="mb-0 text-secondary size-10">Расход</p>
+                        <p>3500.00
+                            <small class="text-danger">10.2
+                                <i class="bi bi-arrow-down"></i>
+                            </small>
+                        </p>
+                    </div>
+                    <div class="col text-end">
+                        <p class="mb-0 text-secondary size-10">Доступный лимит</p>
+                        <p>13500.00</p>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template swiperSlide>
+                <div class="card theme-radial-gradient border-0 mb-3">
+                    <div class="card-body">
+                        <div class="row mb-4">
+                            <div class="col-auto align-self-center">
+                                <img src="assets/img/maestro.png" alt="">
+                            </div>
+                            <div class="col align-self-center text-end">
+                                <p class="small">
+                                    <span class="text-muted size-10">Сбербанк</span><br>
+                                    <span class="">Кредитная карта</span>
+                                </p>
+                            </div>
+                        </div>
+                        <h6 class="fw-normal mb-3">
+                          2200 0000 0001 5465
+                        </h6>
+                        <div class="row">
+                            <div class="col-auto">
+                                <p class="mb-0 text-muted size-10">срок до</p>
+                                <p>09/23</p>
+                            </div>
+                            <div class="col text-end">
+                                <p class="mb-0 text-muted size-10">Card Holder</p>
+                                <p>Maxartkiller</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-auto">
+                        <p class="mb-0 text-secondary size-10">Расход</p>
+                        <p>1254.00
+                            <small class="text-success">18.2
+                                <i class="bi bi-arrow-up"></i>
+                            </small>
+                        </p>
+                    </div>
+                    <div class="col text-end">
+                        <p class="mb-0 text-secondary size-10">Доступный лимит</p>
+                        <p>13500.00</p>
+                    </div>
+                </div>
+            </ng-template>
+        </swiper>
+    </div>
+</div>
+
+<!-- Top Categories  -->
+<div class="row mb-3">
+    <div class="col">
+        <h6 class="title">Топ категорий</h6>
+    </div>
+</div>
+
+<!-- swiper categories cards -->
+<div class="row mb-3">
+    <div class="col-12 px-0">
+        <swiper class="connectionwiper" [slidesPerView]="'auto'" [spaceBetween]="0" [pagination]="false">
+            <ng-template swiperSlide class="text-center">
+                <div class="card bg-opac-50 mb-2">
+                    <div class="card-body p-1">
+                        <div class="avatar avatar-70 bg-white text-color-theme rounded-18 shadow-sm">
+                            <i class="bi bi-house size-24"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-1 small">1.5k
+                    <small class="text-success ">18.2
+                        <i class="bi bi-arrow-up"></i>
+                    </small>
+                </p>
+                <p class="mb-0 text-secondary size-10">Аренда</p>
+            </ng-template>
+            <ng-template swiperSlide class="text-center">
+                <div class="card bg-opac-50 mb-2">
+                    <div class="card-body p-1">
+                        <div class="avatar avatar-70 bg-white text-color-theme rounded-18 shadow-sm">
+                            <i class="bi bi-controller size-24"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-1 small">2.48k
+                    <small class="text-success ">17.4
+                        <i class="bi bi-arrow-up"></i>
+                    </small>
+                </p>
+                <p class="mb-0 text-secondary size-10">Игры</p>
+            </ng-template>
+            <ng-template swiperSlide class="text-center">
+                <div class="card bg-opac-50 mb-2">
+                    <div class="card-body p-1">
+                        <div class="avatar avatar-70 bg-white text-color-theme rounded-18 shadow-sm">
+                            <i class="bi bi-gift size-24"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-1 small">250
+                    <small class="text-success ">5.45
+                        <i class="bi bi-arrow-up"></i>
+                    </small>
+                </p>
+                <p class="mb-0 text-secondary size-10">Подарки</p>
+            </ng-template>
+            <ng-template swiperSlide class="text-center">
+                <div class="card bg-opac-50 mb-2">
+                    <div class="card-body p-1">
+                        <div class="avatar avatar-70 bg-white text-color-theme rounded-18 shadow-sm">
+                            <i class="bi bi-flower1 size-24"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-1 small">1.5k
+                    <small class="text-danger">25.5
+                        <i class="bi bi-arrow-down"></i>
+                    </small>
+                </p>
+                <p class="mb-0 text-secondary size-10">Дача</p>
+            </ng-template>
+            <ng-template swiperSlide class="text-center">
+                <div class="card bg-opac-50 mb-2">
+                    <div class="card-body p-1">
+                        <div class="avatar avatar-70 bg-white text-color-theme rounded-18 shadow-sm">
+                            <i class="bi bi-bag size-24"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-1 small">1.5k
+                    <small class="text-success ">25.84
+                        <i class="bi bi-arrow-up"></i>
+                    </small>
+                </p>
+                <p class="mb-0 text-secondary size-10">Покупки</p>
+            </ng-template>
+            <ng-template swiperSlide class="text-center">
+                <div class="card bg-opac-50 mb-2">
+                    <div class="card-body p-1">
+                        <div class="avatar avatar-70 bg-white text-color-theme rounded-18 shadow-sm">
+                            <i class="bi bi-house size-24"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-1 small">1.5k
+                    <small class="text-success ">18.2
+                        <i class="bi bi-arrow-up"></i>
+                    </small>
+                </p>
+                <p class="mb-0 text-secondary size-10">Аренда</p>
+            </ng-template>
+            <ng-template swiperSlide class="text-center">
+                <div class="card bg-opac-50 mb-2">
+                    <div class="card-body p-1">
+                        <div class="avatar avatar-70 bg-white text-color-theme rounded-18 shadow-sm">
+                            <i class="bi bi-controller size-24"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-1 small">2.48k
+                    <small class="text-success ">17.4
+                        <i class="bi bi-arrow-up"></i>
+                    </small>
+                </p>
+                <p class="mb-0 text-secondary size-10">Игры</p>
+            </ng-template>
+            <ng-template swiperSlide class="text-center">
+                <div class="card bg-opac-50 mb-2">
+                    <div class="card-body p-1">
+                        <div class="avatar avatar-70 bg-white text-color-theme rounded-18 shadow-sm">
+                            <i class="bi bi-gift size-24"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-1 small">250
+                    <small class="text-success ">5.45
+                        <i class="bi bi-arrow-up"></i>
+                    </small>
+                </p>
+                <p class="mb-0 text-secondary size-10">Подарки</p>
+            </ng-template>
+            <ng-template swiperSlide class="text-center">
+                <div class="card bg-opac-50 mb-2">
+                    <div class="card-body p-1">
+                        <div class="avatar avatar-70 bg-white text-color-theme rounded-18 shadow-sm">
+                            <i class="bi bi-flower1 size-24"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-1 small">1.5k
+                    <small class="text-danger">800
+                        <i class="bi bi-arrow-down"></i>
+                    </small>
+                </p>
+                <p class="mb-0 text-secondary size-10">Сад / огород</p>
+            </ng-template>
+            <ng-template swiperSlide class="text-center">
+                <div class="card bg-opac-50 mb-2">
+                    <div class="card-body p-1">
+                        <div class="avatar avatar-70 bg-white text-color-theme rounded-18 shadow-sm">
+                            <i class="bi bi-bag size-24"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-1 small">1.5k
+                    <small class="text-success ">25.84
+                        <i class="bi bi-arrow-up"></i>
+                    </small>
+                </p>
+                <p class="mb-0 text-secondary size-10">Покупки</p>
+            </ng-template>
+        </swiper>
+    </div>
+</div>
+
+<!-- upcoming payments -->
+<div class="row mb-3">
+    <div class="col">
+        <h6 class="title">Последние операции</h6>
+    </div>
+    <div class="col-auto align-self-center">
+        <a href="#" class="small">Смотреть все</a>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body p-0">
+                <ul class="list-group list-group-flush bg-none">
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-auto">
+                                <div class="card text-center">
+                                    <div class="card-body p-1">
+                                        <div class="position-absolute end-0 top-0 bg-success z-index-1 online-status">
+                                        </div>
+                                        <figure class="avatar avatar-70 shadow-sm rounded-18">
+                                            <img src="assets/img/company5.png" alt="">
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col align-self-center px-0">
+                                <p class="text-secondary size-10 mb-0">Платеж</p>
+                                <p class="mb-2">ID0582Max</p>
+                                <p>320.00
+                                    <small class="text-success">1.65
+                                        <i class="bi bi-arrow-up"></i>
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                          <div class="col-auto">
+                            <div class="card text-center">
+                                <div class="card-body p-1">
+                                    <div class="position-absolute end-0 top-0 bg-success z-index-1 online-status">
+                                    </div>
+                                    <figure class="avatar avatar-70 shadow-sm rounded-18">
+                                        <img src="assets/img/company5.png" alt="">
+                                    </figure>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="col align-self-center px-0">
+                              <p class="text-secondary size-10 mb-0">Платеж</p>
+                              <p class="mb-2">ID0582Max</p>
+                              <p>320.00
+                                  <small class="text-success">1.65
+                                      <i class="bi bi-arrow-up"></i>
+                                  </small>
+                              </p>
+                          </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="row">
+                        <div class="col-auto">
+                          <div class="card text-center">
+                              <div class="card-body p-1">
+                                  <div class="position-absolute end-0 top-0 bg-success z-index-1 online-status">
+                                  </div>
+                                  <figure class="avatar avatar-70 shadow-sm rounded-18">
+                                      <img src="assets/img/company5.png" alt="">
+                                  </figure>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="col align-self-center px-0">
+                            <p class="text-secondary size-10 mb-0">Платеж</p>
+                            <p class="mb-2">ID0582Max</p>
+                            <p>320.00
+                                <small class="text-success">1.65
+                                    <i class="bi bi-arrow-up"></i>
+                                </small>
+                            </p>
+                        </div>
+                      </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="row">
+                      <div class="col-auto">
+                        <div class="card text-center">
+                            <div class="card-body p-1">
+                                <div class="position-absolute end-0 top-0 bg-success z-index-1 online-status">
+                                </div>
+                                <figure class="avatar avatar-70 shadow-sm rounded-18">
+                                    <img src="assets/img/company5.png" alt="">
+                                </figure>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col align-self-center px-0">
+                          <p class="text-secondary size-10 mb-0">Платеж</p>
+                          <p class="mb-2">ID0582Max</p>
+                          <p>320.00
+                              <small class="text-success">1.65
+                                  <i class="bi bi-arrow-up"></i>
+                              </small>
+                          </p>
+                      </div>
+                    </div>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,105 @@
+<!-- Sidebar main menu -->
+<app-sidebar  class="sidebar-wrap  sidebar-overlay"></app-sidebar>
+<!-- Add pushcontent or fullmenu instead overlay , keep 'sidebar-[choice here]' -->
+<!-- Sidebar main menu ends-->
+
+<!-- Begin page -->
+<main #mainPage>
+
+    <!-- Header -->
+    <app-headermenu class="header position-fixed" #HeaderEl></app-headermenu>
+    <!-- Header ends -->
+
+    <!-- main page content -->
+    <div class="main-container container">
+        <div class="clearfix"></div>
+        <router-outlet></router-outlet>
+        <div class="clearfix"></div>
+    </div>
+    <!-- main page content ends -->
+
+</main>
+<!-- Page ends-->
+
+ <!-- Footer -->
+<app-staticfooter class="footer" #FooterEl></app-staticfooter>
+ <!-- Footer Ends -->
+
+ <!-- Footer center menu  Modal -->
+<div class="modal fade menumodal" id="menumodal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content shadow">
+            <div class="modal-body">
+                <h1 class="mb-4"><span class="text-secondary fw-light">Быстрая</span><br />Операция!</h1>
+                <div class="text-center">
+                    <img src="assets/img/QRCode.png" alt="" class="mb-2" />
+                    <p class="small text-secondary mb-4">Попросите отсканировать этот QR-Code<br/>для получения денег</p>
+                </div>
+
+                <div class="row justify-content-center mb-4">
+
+                  <div class="col-auto text-center">
+                    <a routerLink="/addmoney" class="avatar avatar-70 p-1 shadow-sm shadow-warning rounded-20 bg-opac mb-2" data-bs-dismiss="modal">
+                        <div class="icons text-warning">
+                            <i class="bi bi-wallet2 size-24"></i>
+                        </div>
+                    </a>
+                    <p class="size-10 text-secondary">Пополнить</p>
+                  </div>
+
+                  <div class="col-auto text-center">
+                    <a routerLink="/withdraw" class="avatar avatar-70 p-1 shadow-sm shadow-secondary rounded-20 bg-opac mb-2" data-bs-dismiss="modal">
+                        <div class="icons text-secondary">
+                            <i class="bi bi-bank size-24"></i>
+                        </div>
+                    </a>
+                    <p class="size-10 text-secondary">Вывести</p>
+                  </div>
+
+                  <div class="col-auto text-center">
+                    <a routerLink="/sendmoney" class="avatar avatar-70 p-1 shadow-sm shadow-purple rounded-20 bg-opac mb-2" data-bs-dismiss="modal">
+                        <div class="icons text-purple">
+                            <i class="bi bi-arrow-up-right size-24"></i>
+                        </div>
+                    </a>
+                    <p class="size-10 text-secondary">Отправить</p>
+                  </div>
+
+
+                </div>
+
+                <div class="row justify-content-center mb-4">
+
+                  <div class="col-auto text-center">
+                    <a routerLink="/wallet" class="avatar avatar-70 p-1 shadow-sm shadow-info rounded-20 bg-opac mb-2" data-bs-dismiss="modal">
+                        <div class="icons text-info">
+                            <i class="bi bi-currency-exchange size-24"></i>
+                        </div>
+                    </a>
+                    <p class="size-10 text-secondary">Обмен</p>
+                  </div>
+
+                  <div class="col-auto text-center">
+                    <a routerLink="/rewards" class="avatar avatar-70 p-1 shadow-sm shadow-info rounded-20 bg-opac mb-2" data-bs-dismiss="modal">
+                        <div class="icons text-info">
+                            <i class="bi bi-cash-coin size-24"></i>
+                        </div>
+                    </a>
+                    <p class="size-10 text-secondary">Кэшбек</p>
+                  </div>
+
+                  <div class="col-auto text-center">
+                    <a routerLink="/shop" class="avatar avatar-70 p-1 shadow-sm shadow-info rounded-20 bg-opac mb-2" data-bs-dismiss="modal">
+                        <div class="icons text-info">
+                            <i class="bi bi-cash-coin size-24"></i>
+                        </div>
+                    </a>
+                    <p class="size-10 text-secondary">Купить</p>
+                  </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  Footer center menu  ends-->
