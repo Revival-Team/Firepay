@@ -23,3 +23,9 @@ describe('SigninComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+export class authorizeComponent {
+  login(): void {
+
+  }
+}

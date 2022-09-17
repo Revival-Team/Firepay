@@ -72,6 +72,8 @@ import { InvoiceComponent } from './appinnerlayout/invoice/invoice.component';
 import { TrackorderComponent } from './appinnerlayout/trackorder/trackorder.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import {FormsModule} from "@angular/forms";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
@@ -156,7 +158,9 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
