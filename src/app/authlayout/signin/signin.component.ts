@@ -12,15 +12,19 @@ import {Api} from "../../api.module";
 
 
 export class SigninComponent implements OnInit {
-  login: string;
+  phone: string;
   password: string;
   error: string;
 
-  constructor (private api: Api) {}
+  constructor (private api: Api) {
+    if (localStorage.getItem('auth_token') !== undefined && localStorage.getItem('auth_token') !== null) {
+      document.location.href = '/home';
+    }
+  }
 
   auth(): void {
     if (this.checkInputs()) {
-      var request = this.api.request('POST', 'sessions', {'phone': this.login, 'password': this.password});
+      var request = this.api.request('POST', 'sessions', {'phone': this.phone, 'password': this.password});
 
       setTimeout(() => {
         this.proceedAuth();
@@ -35,22 +39,21 @@ export class SigninComponent implements OnInit {
   }
 
   proceedAuth(): void {
-    var response = JSON.stringify(this.api.getResponse());
-    var responseData = JSON.parse(response);
+    var response = JSON.parse(this.api.getResponse());
 
-    console.log(responseData);
+    console.log(response);
 
-    if (responseData.status == 'error') {
-      this.error = responseData.message;
-
-      if (responseData.message === 'bad phone') {
-
-      }
+    if (response.status == 'error') {
+      this.error = 'Введены неверные данные.';
+    } else {
+      localStorage.setItem('auth_token', response.data.token);
+      window.location.href = '/home';
+      console.log(localStorage.getItem('auth_token'));
     }
   }
 
   checkInputs(): boolean {
-    return !(this.login == '' || this.password == '' || this.login == undefined || this.password == undefined);
+    return !(this.phone == '' || this.password == '' || this.phone == undefined || this.password == undefined);
   }
 
 
