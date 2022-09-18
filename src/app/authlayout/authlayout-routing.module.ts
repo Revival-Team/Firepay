@@ -12,6 +12,7 @@ import { ThankyouComponent } from './thankyou/thankyou.component';
 import { SplashComponent } from './splash/splash.component';
 import { Thankyou2Component } from './thankyou2/thankyou2.component';
 import { TermsandconditionsComponent } from './termsandconditions/termsandconditions.component';
+import {LogoutComponent} from "./logout/logout.component";
 
 const routes: Routes = [
     {
@@ -34,7 +35,10 @@ const routes: Routes = [
                 path: 'signup',
                 component: SignupComponent,
             },
-
+            {
+              path: 'logout',
+              component: LogoutComponent,
+            },
             {
                 path: 'forgetpassword',
                 component: ForgetpasswordComponent,
