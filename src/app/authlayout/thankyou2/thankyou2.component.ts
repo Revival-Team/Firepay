@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Thankyou2Component implements OnInit {
 
-  constructor() { }
+  constructor() {
+    if (localStorage.getItem('auth_token') !== undefined && localStorage.getItem('auth_token') !== null) {
+      document.location.href = '/home';
+    }
+  }
 
   ngOnInit(): void {
   }
