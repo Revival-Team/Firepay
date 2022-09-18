@@ -19,29 +19,28 @@
         <!-- header ends -->
     </div>
     <div class="col-11 col-sm-11 col-md-6 col-lg-5 col-xl-3 mx-auto align-self-center py-4">
-        <h1 class="mb-3"><span class="text-secondary fw-light">Подтвердите Ваш</span><br/>Email ID</h1>
-        <p class="text-secondary mb-4">Мы отправили вам электронное письмо с OTP с инструкцией.</p>
+        <h1 class="mb-3"><span class="text-secondary fw-light">Подтвердите Ваш</span><br/>номер телефона</h1>
+        <p class="text-secondary mb-4">Мы отправили вам сообщение с кодом.</p>
 
         <div class="form-group form-floating mb-3 is-valid">
-            <input type="text" class="form-control" value="maxartkiller" id="OTP" placeholder="Enter OTP">
-            <label class="form-control-label" for="OTP">Введите опцию</label>
+            <input type="text" class="form-control" value="" id="OTP" placeholder="Введите код" [(ngModel)]="code">
+            <label class="form-control-label" for="OTP">Введите код</label>
         </div>
-
-
+      <p class="text-danger position-absolute">{{ this.error }}</p>
     </div>
     <div class="col-11 col-sm-11 mt-auto mx-auto py-4">
         <div class="row ">
             <div class="col-auto text-center mx-auto">
-                <span class="progressstimer">
-                    <img src="assets/img/progress.png" alt="">
-                    <span class="timer" id="timer">3:00</span>
-                </span>
+<!--                <span class="progressstimer">-->
+<!--                    <img src="assets/img/progress.png" alt="">-->
+<!--                    <span class="timer" id="timer">3:00</span>-->
+<!--                </span>-->
                 <br />
-                <p class="mb-3"><span class="text-muted">Не получили?</span> <a>Отправить OTP заново</a>
+                <p class="mb-3"><span class="text-muted">Не получили? </span> <a>Отправить OTP заново</a>
                 </p>
             </div>
             <div class="col-12 d-grid">
-                <a routerLink="/thankyou2" class="btn btn-default btn-lg shadow-sm">Подтвердите аккаунт</a>
+                <a class="btn btn-default btn-lg shadow-sm" (click)="sendCode()">Подтвердите аккаунт</a>
             </div>
         </div>
     </div>

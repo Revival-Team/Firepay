@@ -21,25 +21,43 @@ export class Api {
    * @param apiMethod
    * @param requestData
    */
-  request(requestMethod: string, apiMethod: string, requestData: object): object {
+  request(requestMethod: string, apiMethod: string, requestData: object): string {
     if (requestMethod === 'POST') {
       // POST REQUEST
-      this.response = this.http.post(this.prepareUrl(apiMethod), requestData)
+      this.http.post(this.prepareUrl(apiMethod), requestData)
         .subscribe((resp: any) => {
-          return resp;
+          this.updateResponse(resp);
         });
     } else {
       // GET REQUEST
-      this.response = this.http.get(this.prepareUrl(apiMethod), requestData)
+      this.http.get(this.prepareUrl(apiMethod), requestData)
         .subscribe((resp: any) => {
-          return resp;
+          this.updateResponse(resp);
         });
     }
 
-    return this.response;
+    return this.getResponse();
   }
 
   /**
+   * Обновляем ответ от сервера
+   *
+   * @param data
+   */
+  updateResponse(data: object): object {
+    return this.response = data;
+  }
+
+  /**
+   * Получить последний ответ
+   */
+  getResponse(): string {
+    return JSON.stringify(this.response);
+  }
+
+  /**
+   * Преобразуем URL запроса
+   *
    * @param apiMethod
    */
   prepareUrl(apiMethod: string): string {
