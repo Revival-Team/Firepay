@@ -12,7 +12,7 @@ export class VerifyComponent implements OnInit {
   error: string;
 
   constructor(private api: Api) {
-    if (localStorage.getItem('auth_token') !== undefined && localStorage.getItem('auth_token') !== null) {
+    if (localStorage.getItem('auth_token') !== undefined && localStorage.getItem('auth_token') !== '') {
       document.location.href = '/home';
     }
   }

@@ -1,7 +1,7 @@
 <!-- balance -->
 <div class="row my-4 text-center">
     <div class="col-12">
-        <h1 class="fw-light mb-2">1,050.00 &#8381;</h1>
+        <h1 class="fw-light mb-2">{{ this.user.userData.account.balance_rub ?? '' }} &#8381;</h1>
         <p class="text-secondary">Общий баланс</p>
     </div>
 </div>
@@ -21,7 +21,7 @@
                     </div>
                     <div class="col align-self-center ps-0">
                         <p class="size-10 text-secondary mb-0">Доход</p>
-                        <p>1542т.р.</p>
+                        <p>{{ this.user.userData.account.balance_rub ?? '' }}т.р.</p>
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                     </div>
                     <div class="col align-self-center ps-0">
                         <p class="size-10 text-secondary mb-0">Расход</p>
-                        <p>1212т.р.</p>
+                        <p>{{ this.user.userData.account.balance_rub ?? '' }}т.р.</p>
                     </div>
                 </div>
             </div>

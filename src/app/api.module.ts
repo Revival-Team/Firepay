@@ -22,6 +22,8 @@ export class Api {
    * @param requestData
    */
   request(requestMethod: string, apiMethod: string, requestData: object): string {
+    console.log('request url: ' + this.prepareUrl(apiMethod));
+
     if (requestMethod === 'POST') {
       // POST REQUEST
       this.http.post(this.prepareUrl(apiMethod), requestData)
