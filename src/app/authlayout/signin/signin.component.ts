@@ -17,8 +17,9 @@ export class SigninComponent implements OnInit {
   error: string;
 
   constructor (private api: Api) {
-    if (localStorage.getItem('auth_token') !== undefined && localStorage.getItem('auth_token') !== null) {
+    if (localStorage.getItem('auth_token') !== undefined && localStorage.getItem('auth_token') !== '' && localStorage.getItem('auth_token') !== null) {
       document.location.href = '/home';
+      console.log('Already authorized');
     }
   }
 

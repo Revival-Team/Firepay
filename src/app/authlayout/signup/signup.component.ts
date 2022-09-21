@@ -21,6 +21,11 @@ export class SignupComponent implements OnInit {
 
   constructor (private api: Api, private user: User) {
     this.user.setGuestToken();
+
+    if (localStorage.getItem('auth_token') !== undefined && localStorage.getItem('auth_token') !== '' && localStorage.getItem('auth_token') !== null) {
+      document.location.href = '/home';
+      console.log('Already authorized');
+    }
   }
 
   ngOnInit(): void {

@@ -12,9 +12,12 @@ export class VerifyComponent implements OnInit {
   error: string;
 
   constructor(private api: Api) {
-    if (localStorage.getItem('auth_token') !== undefined && localStorage.getItem('auth_token') !== '') {
+    if (localStorage.getItem('auth_token') !== undefined && localStorage.getItem('auth_token') !== '' && localStorage.getItem('auth_token') !== null) {
       document.location.href = '/home';
+      console.log('Already authorized');
     }
+
+    console.log('Status: ' + localStorage.getItem('auth_token'));
   }
 
   ngOnInit(): void {
