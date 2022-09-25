@@ -1,7 +1,7 @@
 <!-- select Amount -->
 <div class="row">
     <div class="col-12 text-center mb-4">
-        <input type="text" class="trasparent-input text-center" value="100.00" placeholder="Enter Amount">
+        <input type="text" class="trasparent-input text-center" value="" placeholder="Сумма" [(ngModel)]="amount">
         <div class="text-center"><span class="text-muted">Счет в рублях</span>
             <button class="btn btn-link btn-sm text-muted px-1 dropdown-toggle" type="button" id="ln1"
                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -19,7 +19,7 @@
 <div class="row">
     <div class="col-12 mb-4">
         <div class="form-group form-floating is-valid">
-            <input type="text" class="form-control " id="coupon" placeholder="Coupon Code" value="CASHBACK05NEW">
+            <input type="text" class="form-control " id="coupon" placeholder="Coupon Code" value="">
             <label class="form-control-label" for="coupon">Код купона</label>
             <div class=" tooltip-btn">
                 <span class="tag bg-success text-white border-0 px-2 float-end mt-1">Применить</span>
@@ -136,8 +136,9 @@
 </div>
 <div class="row mb-4">
     <div class="col-12 ">
-        <a routerLink="/thankyou3" class="btn btn-default btn-lg shadow-sm w-100">
-            Добавить в кошелек
+        <a (click)="initiatePay()" class="btn btn-default btn-lg shadow-sm w-100">
+            Пополнить
         </a>
     </div>
 </div>
+<p style="color: red;margin-left: 15px;">{{ error }}</p>

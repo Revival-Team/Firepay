@@ -1,7 +1,7 @@
 <!-- select Amount -->
 <div class="row">
     <div class="col-12 text-center mb-4">
-        <input type="text" class="trasparent-input text-center" value="11000.00" placeholder="Enter Amount">
+        <input type="text" class="trasparent-input text-center" value="" [(ngModel)]="amount" placeholder="Enter Amount">
         <div class="text-center"><span class="text-muted">Счет в РУБ</span>
             <button class="btn btn-link btn-sm text-muted px-1 dropdown-toggle" type="button" id="ln1"
                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -156,8 +156,9 @@
 </div>
 <div class="row mb-4">
     <div class="col-12 ">
-        <a routerLink="/thankyou3" class="btn btn-default btn-lg shadow-sm w-100">
+        <a (click)="withdrawMoney()" class="btn btn-default btn-lg shadow-sm w-100">
             Добавить в кошелек
         </a>
     </div>
 </div>
+<p style="color: red;margin-left: 15px;">{{ error }}</p>

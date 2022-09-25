@@ -39,7 +39,7 @@
                     </div>
                     <div class="col-auto align-self-center ps-0">
                         <p class="size-10 mb-1 text-secondary">Доход</p>
-                        <p>1542т.р.</p>
+                        <p>0т.р.</p>
                     </div>
                 </div>
             </div>
@@ -66,7 +66,7 @@
                     </div>
                     <div class="col-auto align-self-center ps-0">
                         <p class="size-10 mb-1 text-secondary">Расход</p>
-                        <p>1212т.р.</p>
+                        <p>0т.р.</p>
                     </div>
                 </div>
             </div>
@@ -406,104 +406,39 @@
 <div class="row mb-4">
     <div class="col-12">
         <div class="card">
-            <div class="card-body p-0">
-                <ul class="list-group list-group-flush bg-none">
-                    <li class="list-group-item">
-                        <div class="row">
-                            <div class="col-auto">
-                                <div class="card text-center">
-                                    <div class="card-body p-1">
-                                        <div class="position-absolute end-0 top-0 bg-success z-index-1 online-status">
-                                        </div>
-                                        <figure class="avatar avatar-70 shadow-sm rounded-18">
-                                            <img src="assets/img/company5.png" alt="">
-                                        </figure>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col align-self-center px-0">
-                                <p class="text-secondary size-10 mb-0">Платеж</p>
-                                <p class="mb-2">ID0582Max</p>
-                                <p>320.00
-                                    <small class="text-success">1.65
-                                        <i class="bi bi-arrow-up"></i>
-                                    </small>
-                                </p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="row">
-                          <div class="col-auto">
-                            <div class="card text-center">
-                                <div class="card-body p-1">
-                                    <div class="position-absolute end-0 top-0 bg-success z-index-1 online-status">
-                                    </div>
-                                    <figure class="avatar avatar-70 shadow-sm rounded-18">
-                                        <img src="assets/img/company5.png" alt="">
-                                    </figure>
-                                </div>
-                            </div>
-                          </div>
-                          <div class="col align-self-center px-0">
-                              <p class="text-secondary size-10 mb-0">Платеж</p>
-                              <p class="mb-2">ID0582Max</p>
-                              <p>320.00
-                                  <small class="text-success">1.65
-                                      <i class="bi bi-arrow-up"></i>
-                                  </small>
-                              </p>
-                          </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                      <div class="row">
-                        <div class="col-auto">
-                          <div class="card text-center">
-                              <div class="card-body p-1">
-                                  <div class="position-absolute end-0 top-0 bg-success z-index-1 online-status">
-                                  </div>
-                                  <figure class="avatar avatar-70 shadow-sm rounded-18">
-                                      <img src="assets/img/company5.png" alt="">
-                                  </figure>
-                              </div>
-                          </div>
-                        </div>
-                        <div class="col align-self-center px-0">
-                            <p class="text-secondary size-10 mb-0">Платеж</p>
-                            <p class="mb-2">ID0582Max</p>
-                            <p>320.00
-                                <small class="text-success">1.65
-                                    <i class="bi bi-arrow-up"></i>
-                                </small>
-                            </p>
-                        </div>
-                      </div>
-                  </li>
+            <div class="card-body p-0 is-transactions" *ngIf="transactions">
+                <ul *ngFor="let transaction of this.transactions" class="list-group list-group-flush bg-none">
                   <li class="list-group-item">
                     <div class="row">
                       <div class="col-auto">
                         <div class="card text-center">
-                            <div class="card-body p-1">
-                                <div class="position-absolute end-0 top-0 bg-success z-index-1 online-status">
-                                </div>
-                                <figure class="avatar avatar-70 shadow-sm rounded-18">
-                                    <img src="assets/img/company5.png" alt="">
-                                </figure>
+                          <div class="card-body p-1">
+                            <div [ngSwitch]="transaction.status" class="position-absolute end-0 top-0">
+                              <div *ngSwitchCase="'wait'" class="position-absolute end-0 top-0 bg-warning z-index-1 online-status">
+                              </div>
+                              <div *ngSwitchCase="'error'" class="position-absolute end-0 top-0 bg-danger z-index-1 online-status">
+                              </div>
                             </div>
+                            <figure class="avatar avatar-70 shadow-sm rounded-18">
+                              <i _ngcontent-dyb-c115="" class="bi bi-wallet2 size-24"></i>
+                            </figure>
+                          </div>
                         </div>
                       </div>
                       <div class="col align-self-center px-0">
-                          <p class="text-secondary size-10 mb-0">Платеж</p>
-                          <p class="mb-2">ID0582Max</p>
-                          <p>320.00
-                              <small class="text-success">1.65
-                                  <i class="bi bi-arrow-up"></i>
-                              </small>
-                          </p>
+                        <p class="text-secondary size-10 mb-0">Платеж</p>
+                        <p class="mb-2" [ngSwitch]="transaction.finance_type_code">
+                          <span *ngSwitchCase="'payin'">Пополнение</span>
+                          <span *ngSwitchCase="'payout'">Вывод</span>
+                        </p>
+                        <p>{{ transaction.sum }}
+<!--                          <small class="text-success">1.65-->
+<!--                            <i class="bi bi-arrow-up"></i>-->
+<!--                          </small>-->
+                        </p>
                       </div>
                     </div>
-                </li>
+                  </li>
                 </ul>
             </div>
         </div>

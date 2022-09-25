@@ -77,6 +77,6 @@ export class User {
   }
 
   getUserToken() {
-    return sessionStorage.getItem("guest_auth");
+    return localStorage.getItem('auth_token');
   }
 }

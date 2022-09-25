@@ -19,8 +19,8 @@
 
         <div class="row my-3 py-4">
             <div class="col-7 align-self-center">
-                <h1 class="mb-2"><span class="fw-light text-secondary">Привет!</span><br />Дмитрий</h1>
-                <p class="text-muted size-12">Москва,<br />Россия</p>
+                <h1 class="mb-2"><span class="fw-light text-secondary">Привет,</span><br />{{ this.user.userData.profile.fullname ?? '' }}!</h1>
+<!--                <p class="text-muted size-12">Москва,<br />Россия</p>-->
             </div>
 
             <div class="col align-self-center">
@@ -38,7 +38,7 @@
         <a routerLink="/" class="btn btn-light btn-lg shadow-sm w-100">Приглашение</a>
     </div>
     <div class="col">
-        <a routerLink="/chat" class="btn btn-default btn-lg shadow-sm w-100">Сообщение</a>
+        <a routerLink="/profile/edit" class="btn btn-default btn-lg shadow-sm w-100">Редактировать</a>
     </div>
 </div>
 <!-- location map-->

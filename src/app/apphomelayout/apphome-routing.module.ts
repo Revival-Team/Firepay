@@ -6,6 +6,7 @@ import { ApphomelayoutComponent } from './apphomelayout.component';
 import { ProfileComponent } from './profile/profile.component';
 import { WalletComponent } from './wallet/wallet.component';
 import { ShopComponent } from './shop/shop.component';
+import {ProfileEditComponent} from "./profile-edit/profile-edit.component";
 
 const routes: Routes = [
   {
@@ -16,22 +17,26 @@ const routes: Routes = [
       {
         path:'home',
         component: HomeComponent
-      },      
+      },
       {
         path:'stats',
         component: StatsComponent
-      },      
+      },
       {
         path:'shop',
         component: ShopComponent
-      }, 
+      },
       {
         path:'wallet',
         component: WalletComponent
-      },    
+      },
       {
         path:'profile',
         component: ProfileComponent
+      },
+      {
+        path:'profile/edit',
+        component: ProfileEditComponent
       },
     ]
   }
@@ -40,7 +45,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes),
-    
+
   ],
   exports: [RouterModule]
 })
