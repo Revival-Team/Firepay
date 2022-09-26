@@ -74,6 +74,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import {FormsModule} from "@angular/forms";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { ExchangeComponent } from './apphomelayout/exchange/exchange.component';
 
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
@@ -142,7 +143,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     AddaddressComponent,
     PaymentComponent,
     InvoiceComponent,
-    TrackorderComponent
+    TrackorderComponent,
+    ExchangeComponent
   ],
   imports: [
     BrowserModule,

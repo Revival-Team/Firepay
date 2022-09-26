@@ -7,6 +7,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { WalletComponent } from './wallet/wallet.component';
 import { ShopComponent } from './shop/shop.component';
 import {ProfileEditComponent} from "./profile-edit/profile-edit.component";
+import {ExchangeComponent} from "./exchange/exchange.component";
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
         path:'profile/edit',
         component: ProfileEditComponent
       },
+      {
+        path: 'wallet/exchange',
+        component: ExchangeComponent
+      }
     ]
   }
 ];

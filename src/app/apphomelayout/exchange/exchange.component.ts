@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import {Api} from "../../api.module";
 import {User} from "../../user/user.module";
+import {interval} from "rxjs";
 
 @Component({
-  selector: 'app-sendmoney',
-  templateUrl: './sendmoney.component.html',
-  styleUrls: ['./sendmoney.component.scss']
+  selector: 'app-exchange',
+  templateUrl: './exchange.component.html',
+  styleUrls: ['./exchange.component.scss']
 })
-export class SendmoneyComponent implements OnInit {
+export class ExchangeComponent implements OnInit {
   error: string;
 
   amount: number;
@@ -17,8 +18,6 @@ export class SendmoneyComponent implements OnInit {
 
   fromCurrencyCode: string;
   toCurrencyCode: string;
-
-  toUserId: number;
 
   constructor(private api: Api, public user: User) { }
 
@@ -73,7 +72,7 @@ export class SendmoneyComponent implements OnInit {
     return code;
   }
 
-  public sendMoney(): void {
+  public exchange(): void {
     // Если сумма меньше 10 рублей, то вернем ошибку
     if (this.amount < 10 || this.amount === undefined) {
       alert('Минимальная сумма пополнения: 10 рублей!');
@@ -82,8 +81,8 @@ export class SendmoneyComponent implements OnInit {
 
     console.log({
       'token': this.user.getUserToken(),
-      'finance_type_id': 3,
-      'finance_type_code': 'transfer',
+      'finance_type_id': 4,
+      'finance_type_code': 'exchange',
       'account_to_id': this.user.userData.account.id,
       'currency_from_id': this.fromCurrency,
       'currency_from_code': this.fromCurrencyCode,
@@ -95,10 +94,9 @@ export class SendmoneyComponent implements OnInit {
     // Если всё норм, то шлём запрос
     this.api.request('POST', 'finance', {
       'token': this.user.getUserToken(),
-      'account_from_id': this.user.userData.account.id,
-      'account_to_id': this.toUserId,
-      'finance_type_id': 3,
-      'finance_type_code': 'transfer',
+      'finance_type_id': 4,
+      'finance_type_code': 'exchange',
+      'account_to_id': this.user.userData.account.id,
       'currency_from_id': this.fromCurrency,
       'currency_from_code': this.fromCurrencyCode,
       'currency_to_id': this.toCurrency,
